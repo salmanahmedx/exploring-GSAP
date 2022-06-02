@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reveal Animation</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display:wght@500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Antic+Slab&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <nav>
+    <img src="resources/barrel.svg" alt="logo château" class="logo barrel" />
+    <div class="nav-container">
+      <a href="#">HOME</a>
+      <a href="#">ZEN</a>
+      <a href="#">CONTACT</a>
+    </div>
+    <img src="resources/leaf.svg" alt="logo" />
+  </nav>
+
+  <div class="home">
+    <div class="overlay"></div>
+    <video autoplay muted loop>
+      <source src="resources/sky.mp4" type="video/mp4" />
+    </video>
+    <div class="home-content">
+      <h1>ESCAPING THE REALITY.</h1>
+      <div class="middle-line"></div>
+      <img src="resources/meditation.svg" alt="" />
+      <button>DISCOVER</button>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
