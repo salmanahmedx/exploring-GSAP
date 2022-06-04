@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BarbaJS Basics</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- unchanged -->
+    <main data-barba="wrapper">
+        <!-- unchanged -->
+        <section data-barba="container" data-barba-namespace="neo">
+            <!-- changed -->
+            <img src="./image/neo.jpeg" alt="neo">
+            <h1>Third Page</h1>
+        </section>
+        <!-- unchanged -->
+        <h1>Same in every page</h1>
+    </main>
+    <!-- unchanged -->
+    <div class="links">
+        <a href="index.html">PAGE 1</a>
+        <a href="page2.html">PAGE 2</a>
+        <a href="page3.html">PAGE 3</a>
+    </div>
+
+    <script src="https://unpkg.com/@barba/core"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
