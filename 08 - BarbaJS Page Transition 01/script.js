@@ -41,15 +41,21 @@ const enterAnimation = (current, done, gradient) => {
 //animations
 barba.init({
     // The animation works well but if we click the button rapidly the animation doesn't finish and it just shows the next page directly. To stop this and enable animation to finish we used preventRunning: true
+
+    //** Tells Barba to prevent page “force reload” when the user clicks on an eligible link during a transition is running. This option is useful if you don’t want your users to break running transitions, especially if they are long.
+
     preventRunning: true,
     transitions: [
         //showcase transitions
         {
             name: "default",
-            //on page transition background change there's a weird flash as it doesn't know where to animate from. We never specified whether it's transitioning from one gradient to another. On page refresh we need to save the gradient on the current page that will work as a starting point for page transition.
 
-            //once function basically runs only once on page refresh
+            //on page transition background change there's a weird flash as it doesn't know where to animate from. We never specified the current page here so BARBA doesn't know where to animate from. On page refresh we need to specify the current page and also save the gradient on the current page that will work as a starting point for page transition.
+
+            //once function basically runs only once on page refresh. Now, on page refresh Barba will run the page enter animation directly. We are avoiding the page leave animation and eliminating the problem of unspecified current page issue.
+
             once(data) {
+                //barba doesn't consider the duration property of GSAP. That's why we've to use an async function to let it know not to start the enter functionality until leave functionality is completed first.
                 const done = this.async();
                 let next = data.next.container;
                 let gradient = getGradient(data.next.namespace);
@@ -63,6 +69,7 @@ barba.init({
                 leaveAnimation(current, done);
             },
             enter(data) {
+                //barba doesn't consider the duration property of GSAP. That's why we've to use an async function to let it know not to start the enter functionality until leave functionality is completed first.
                 const done = this.async();
                 let next = data.next.container;
                 let gradient = getGradient(data.next.namespace)
